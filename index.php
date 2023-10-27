@@ -10,6 +10,9 @@
     include 'koneksi.php';
     ?>
     <h2> DATA PENDAFTARAN CALON SISWA</h2>
+    <br>
+    <a href="tambah-calon-siswa.php">Tambah Data</a>
+    <br><br>
     <table border="1">
         <tr>
             <th>No</th>
