@@ -24,7 +24,18 @@
         </tr>
         <?php
         $no =1;
-        $data = mysqli_query($koneksi, 'SELECT * FROM calon_siswa');
+        $query = "SELECT
+                    calon_siswa.id_calon_siswa AS id_calon_siswa,
+                    calon_siswa.nama_calon_siswa AS nama_calon_siswa,
+                    calon_siswa.jenis_kelamin_calon_siswa AS jenis_kelamin_calon_siswa,
+                    calon_siswa.asal_sekolah_calon_siswa AS asal_sekolah_calon_siswa,
+                    calon_siswa.id_agama AS id_agama,
+                    agama.nama_agama AS nama_agama
+                  FROM
+                    calon_siswa
+                  INNER JOIN agama ON calon_siswa.id_agama = agama.id_agama
+                 ";
+        $data = mysqli_query($koneksi,$query);
         while ($calon_siswa = mysqli_fetch_array($data)) {
             $jenis_kelamin ='Laki-laki';
             if($calon_siswa['jenis_kelamin_calon_siswa'] == 'P'){
@@ -36,7 +47,7 @@
             <td><?php echo $calon_siswa['nama_calon_siswa']; ?></td>
             <td><?php echo $jenis_kelamin; ?></td>
             <td><?php echo $calon_siswa['asal_sekolah_calon_siswa']; ?></td>
-            <td><?php echo $calon_siswa['id_agama']; ?></td>
+            <td><?php echo $calon_siswa['nama_agama']; ?></td>
             <td>
                 <a href="edit.php?id=<?php echo $calon_siswa['id_calon_siswa'];?>">EDIT</a>
                 <a href="action/delete.php?id=<?php echo $calon_siswa['id_calon_siswa'];?>">DELETE</a>
