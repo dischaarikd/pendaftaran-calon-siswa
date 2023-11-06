@@ -15,7 +15,7 @@
     <a href="index.php">Kembali</a>
     <br><br>
 
-    <form action="">
+    <form action="action/add.php" method="POST">
         <label for="nama_calon_siswa">Nama Calon siswa:</label>
         <input type="text" name="nama_calon_siswa" id="nama_calon_siswa">
         <br><br>
