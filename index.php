@@ -20,6 +20,7 @@
             <th>Jenis Kelamin</th>
             <th>Asal Sekolah</th>
             <th>Agama</th>
+            <th>Action</th>
         </tr>
         <?php
         $no =1;
@@ -36,6 +37,10 @@
             <td><?php echo $jenis_kelamin; ?></td>
             <td><?php echo $calon_siswa['asal_sekolah_calon_siswa']; ?></td>
             <td><?php echo $calon_siswa['id_agama']; ?></td>
+            <td>
+                <a href="action/edit.php?id=<?php echo $calon_siswa['id_calon_siswa'];?>">EDIT</a>
+                <a href="action/delete.php?id=<?php echo $calon_siswa['id_calon_siswa'];?>">DELETE</a>
+            </td>
         </tr>
         <?php } ?>
     </table>
