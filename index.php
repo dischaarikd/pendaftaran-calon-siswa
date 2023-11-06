@@ -38,7 +38,7 @@
             <td><?php echo $calon_siswa['asal_sekolah_calon_siswa']; ?></td>
             <td><?php echo $calon_siswa['id_agama']; ?></td>
             <td>
-                <a href="action/edit.php?id=<?php echo $calon_siswa['id_calon_siswa'];?>">EDIT</a>
+                <a href="edit.php?id=<?php echo $calon_siswa['id_calon_siswa'];?>">EDIT</a>
                 <a href="action/delete.php?id=<?php echo $calon_siswa['id_calon_siswa'];?>">DELETE</a>
             </td>
         </tr>
