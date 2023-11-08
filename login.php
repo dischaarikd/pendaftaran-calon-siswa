@@ -6,6 +6,13 @@
     <title>Login</title>
 </head>
 <body>
+    <?php
+    session_start();
+    if(isset($_SESSION['role'])) {
+        header("location:users");
+    }
+    ?>
+
     <h2> LOGIN </h2>
     <br><br>
 

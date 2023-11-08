@@ -8,10 +8,15 @@
 <body>
 <?php
     include '../koneksi.php';
-    ?>
+    session_start();
+    if($_SESSION['role'] == '') {
+    header("location:../login.php"); 
+    }
+?>
      <h2> DATA USERS </h2>
     <br>
     <a href="tambah-user.php">Tambah User</a>
+    <a href="../logout.php">Logout</a>
     <br><br>
         <table border="1">
             <tr>
@@ -44,7 +49,9 @@
                     <td><?php echo $data_user['role']; ?></td>
                     <td>
                         <a href="edit.php?id=<?php echo $data_user['id_user'];?>">EDIT</a>
+                        <?php if($_SESSION['role'] == 'admin') { ?>
                         <a href="action/delete.php?id=<?php echo $data_user['id_user'];?>">DELETE</a>
+                        <?php } ?>
                     </td>
                 </tr>
                 <?php
